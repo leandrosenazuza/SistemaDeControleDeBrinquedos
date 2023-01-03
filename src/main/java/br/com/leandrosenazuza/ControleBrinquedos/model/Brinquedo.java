@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -17,19 +18,10 @@ public class Brinquedo implements Serializable{
     @Column
     public String nome_brinquedo;
 
-    public int getId_brinquedo() {
-        return id_brinquedo;
-    }
+    @Column
+    public String marca_brinquedo;
 
-    public void setId_brinquedo(int id_brinquedo) {
-        this.id_brinquedo = id_brinquedo;
-    }
+    @Column
+    public LocalDateTime hora_Inclusao;
 
-    public String getNome_brinquedo() {
-        return nome_brinquedo;
-    }
-
-    public void setNome_brinquedo(String nome_brinquedo) {
-        this.nome_brinquedo = nome_brinquedo;
-    }
 }

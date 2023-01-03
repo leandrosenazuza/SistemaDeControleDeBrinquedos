@@ -1,16 +1,13 @@
 package br.com.leandrosenazuza.ControleBrinquedos.dto;
 
+import lombok.Data;
+
 import javax.validation.constraints.NotNull;
 
+@Data
 public class BrinquedoDTO {
     @NotNull
     private String nome_brinquedo;
 
-    public String getNome_brinquedo() {
-        return nome_brinquedo;
-    }
-
-    public void setNome_brinquedo(String nome_brinquedo) {
-        this.nome_brinquedo = nome_brinquedo;
-    }
+    private String marca_brinquedo;
 }

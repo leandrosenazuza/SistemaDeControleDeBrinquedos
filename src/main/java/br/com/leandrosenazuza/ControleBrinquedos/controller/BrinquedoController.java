@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.Id;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -30,6 +32,8 @@ public class BrinquedoController {
         Brinquedo brinquedoAux = new Brinquedo();
         try{
             brinquedoAux.setNome_brinquedo(brinquedoDTO.getNome_brinquedo());
+            brinquedoAux.setMarca_brinquedo(brinquedoDTO.getMarca_brinquedo());
+            brinquedoAux.setHora_Inclusao(LocalDateTime.now(ZoneId.of("UTC")));
             brinquedoService.persistirBrinquedoService(brinquedoAux);
             return "Persistido com sucesso";
         }catch (Exception e){
